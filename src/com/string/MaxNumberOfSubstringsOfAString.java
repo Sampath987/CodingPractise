@@ -16,6 +16,7 @@ public class MaxNumberOfSubstringsOfAString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+
 		MaxNumberOfSubstringsOfAString maxNumberOfSubstringsOfAString = new MaxNumberOfSubstringsOfAString();
 		Set<String> setOfSubStrings1 = maxNumberOfSubstringsOfAString.findMaxSubstringCount("Sampath");
 		Set<String> setOfSubStrings2 = maxNumberOfSubstringsOfAString.findMaxSubstringCount("Sandeep");
@@ -51,55 +52,33 @@ public class MaxNumberOfSubstringsOfAString {
 		  
 		  List<String> list2 = new ArrayList();
 
-		  
-		  map.entrySet().stream()
-				  .filter(i -> i.getValue()>1)
+		  map.entrySet().stream().sequential()
 				  .forEach(i -> 
 				  {
-					  list2.add(i.getKey());
 					  System.out.println(i.getKey() + " " + i.getValue());
 		  
 				  });
 		  
-		  list2.stream().forEach(i -> System.out.println(i));
+		  map.entrySet().stream().sequential()
+		  .filter(i -> i.getValue()>1)
+		  .forEach(i -> 
+		  {
+			  list2.add(i.getKey());
+			  System.out.println(i.getKey() + " " + i.getValue());
+  
+		  });
 		  
-		  Collections.sort(list2, (s1,s2) -> s2.length()-s1.length());
 		  
-		  System.out.println();
-		  System.out.println();
-		  System.out.println();
-		  System.out.println();
-
-		  list2.stream().forEach(i -> System.out.println(i));
+		  list2.stream().sequential().forEach(i -> System.out.print(i + " "));
 		  
-		  System.out.println(list2.get(0));
-
-		  
-		 // Collections.sort(list);
-		  
-		
-		
-	
-		
-	
- 
-// @formatter:on
-
-		
-
+		  Collections.sort(list2, (s1,s2) -> s1.length()-s2.length());
 
 	}
-
-	// list the set and find the size
-//	Set<String> setOfSubStrings = new LinkedHashSet();
 
 
 	public Set<String> findMaxSubstringCount(String s) {
 		int length = s.length();
 		int tempvariable = 0;
-		// Sampath
-		// n + (n-1) + (n-2) + ..+ (n-(n-1)) = n*n - (n-1)n/2 = n(n+1)/2
-
 
 		Set<String> setOfSubStrings = new TreeSet();
 
@@ -110,9 +89,7 @@ public class MaxNumberOfSubstringsOfAString {
 				setOfSubStrings.add(s.substring(i, j+1));
 			}
 		}
-		
-//		setOfSubStrings.stream().forEach(System.out::println);
-		
+				
 		
 
 		return setOfSubStrings;

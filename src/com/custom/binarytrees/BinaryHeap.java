@@ -24,8 +24,7 @@ public class BinaryHeap {
 		customBinaryHeap.addInsert(23);
 
 		customBinaryHeap.iterarte();
-		System.out.println("Give some gap \n \n");
-
+		System.out.println("\nGive some gap \n \n");
 		/*
 		 * customBinaryHeap.pollDelete(); customBinaryHeap.pollDelete();
 		 * customBinaryHeap.pollDelete(); customBinaryHeap.pollDelete();
@@ -149,11 +148,28 @@ class CustomBinaryHeap {
 
 	}
 
-
 	public void iterarte() {
-		Arrays.stream(heap).forEach(i -> System.out.println("The Value of each i is " + i));
+		Arrays.stream(heap)
+		.sequential()
+		.forEach(i -> System.out.print(i + " "));
 	}
 
 }
+
+/*
+The Value of each i is 10
+The Value of each i is 23
+The Value of each i is 23
+The Value of each i is 102
+The Value of each i is 53
+The Value of each i is 96
+The Value of each i is 90
+The Value of each i is 959
+The Value of each i is 959
+The Value of each i is 100
+The Value of each i is 97
+The Value of each i is 203
+The Value of each i is 239
+The Value of each i is 95 */
 
 // 

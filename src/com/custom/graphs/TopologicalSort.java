@@ -40,6 +40,23 @@ public class TopologicalSort
         }
     }
  
+    public  void toplogicalSortSecondTime(Node node)
+    {
+        List<Node> neighborNodes = node.getNeighbours();
+        for(int i =0; i<neighborNodes.size();i++)
+        {
+        	Node innerNode = neighborNodes.get(i);
+        	if(innerNode!=null && !innerNode.visited)
+        	{
+        		toplogicalSortSecondTime(neighborNodes.get(i));
+        	}
+        }
+        stack.push(node);
+        node.visited=true;
+
+    }
+    
+    
     // Recursive toplogical Sort
     public  void toplogicalSort(Node node)
     {
@@ -97,6 +114,7 @@ public class TopologicalSort
         Stack<Node> resultStack=topological.stack;
         while (resultStack.empty()==false)
             System.out.print(resultStack.pop() + " ");
+        
     }
  
 }

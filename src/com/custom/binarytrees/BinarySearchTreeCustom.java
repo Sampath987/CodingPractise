@@ -13,6 +13,7 @@ public class BinarySearchTreeCustom {
 		// TODO Auto-generated method stub
 		
 		CustomBinarySearTree customBinarySearTree = new CustomBinarySearTree();
+		
 		customBinarySearTree.addBST(10);
 		customBinarySearTree.addBST(20);
 		customBinarySearTree.addBST(15);
@@ -65,6 +66,98 @@ class Node
 }
 class CustomBinarySearTree
 {
+	public Node removeSecondTime(Node headNode, int k)
+	{
+		Node returningNode = null;
+	 if(headNode!=null)
+	 {
+		if(headNode.data>k)
+		{
+			removeSecondTime(headNode.left, k);
+		}
+		else if(headNode.data<k)
+		{
+			removeSecondTime(headNode.right, k);
+		}
+		else if(headNode.data==k)
+		{
+			if(headNode.left==null && headNode.right==null)
+			{
+				returningNode = headNode;
+				headNode=null;
+				return returningNode;
+			}
+			// 
+			else if(headNode.left==null)
+			{
+				headNode.data = headNode.right.data;
+				removeSecondTime(headNode.right,headNode.right.data);
+				
+			}
+			else if(headNode.right==null)
+			{
+				headNode.data = headNode.left.data;
+				removeSecondTime(headNode.left,headNode.left.data);
+				
+			}
+			else
+			{
+
+				Node temp = headNode.left;
+				while(temp.right!=null)
+				{
+					temp = temp.right;
+				}
+				headNode.data = temp.data;
+				removeSecondTime(temp,temp.data);
+
+				
+			}
+			
+		}
+	 }
+	 return returningNode;
+	}
+	
+	public Node removeThirdTime(Node headNode, int k)
+	{
+		if(headNode!=null)
+		 {
+			if(headNode.data>k)
+			{
+				headNode.left = removeThirdTime(headNode.left, k);
+			}
+			else if(headNode.data<k)
+			{
+				headNode.right = removeThirdTime(headNode.right, k);
+			}
+			else if(headNode.data==k)
+			{
+				if(headNode.left==null)
+					return headNode.right;
+				else if(headNode.right==null)
+					return headNode.left;
+				else
+				{
+					Node temp = headNode.left;
+					while(temp.right!=null)
+					{
+						temp = temp.right;
+					}
+					headNode.data = temp.data;
+					headNode.left = removeThirdTime(headNode.left, temp.data);
+					
+				}
+				
+			}
+			return headNode;
+
+		}
+		
+		return null;
+	}
+
+	
 	Node[] bstArr = new Node[20];
 	int bstArrActualSize=bstArr.length;
 	int currentBSTSize=0;
@@ -77,13 +170,14 @@ class CustomBinarySearTree
 		
 		
 	}
+	
 	public void remove(Node headNode, int k)
 	{
 		if(headNode.data>k)
 		{
 			remove(headNode.left, k);
 		}
-		if(headNode.data<k)
+		else if(headNode.data<k)
 		{
 			remove(headNode.right, k);
 		}
@@ -176,6 +270,7 @@ class CustomBinarySearTree
 		for(int i=0;i<currentBSTSize;i++)
 		
 			{
+			System.out.print(" --- Break");
 			iterator.next();
 
 			}

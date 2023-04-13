@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
@@ -17,6 +19,10 @@ public class SelectionSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		String s1 = "yes";
+		String s2 = "yes";
+		System.out.println(s1==s2);
 		
 		SelectionSort selectionSort = new SelectionSort();
 		selectionSort.sort();
@@ -30,9 +36,9 @@ public class SelectionSort {
 	int minIndex=0;
 	public void sort()
 	{
-		System.out.println("Before sorting");
 		
-		Arrays.stream(a).forEach(i -> System.out.println(i));
+		
+		Arrays.stream(a).forEach(i -> System.out.print(i + " "));
 		
 		for(int i=0; i<a.length ; i++)
 		{
@@ -49,8 +55,8 @@ public class SelectionSort {
 			a[minIndex]= temp;
 		}
 		
-		System.out.println("After sorting");
+		System.out.println("\n" + "After sorting");
 		
-		Arrays.stream(a).forEach(i -> System.out.println(i));
+		Arrays.stream(a).forEach(i -> System.out.print(i + " "));
 	}
 }

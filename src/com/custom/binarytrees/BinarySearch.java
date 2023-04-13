@@ -15,8 +15,9 @@ public class BinarySearch {
 		Arrays.sort(inputArray);
 		
 		//  12 5 3 4 66 66 90 56 95 
-	//	Stream.of(inputArray).forEach(i->System.out.print( i+ " "));
+		Stream.of(inputArray).forEach(i->System.out.print( i+ " "));
 		
+		System.out.println(Arrays.binarySearch(inputArray, 2) + "   results");
 
 		System.out.println(Arrays.binarySearch(inputArray, 99) + "   results");
 		System.out.println("");
@@ -45,20 +46,20 @@ public class BinarySearch {
 		 */
 		if(endIndex>=startIndex)
 		{
-		if(inputArray[mid]==findingOutElement)
-		{
-			return mid;
-		}
-		if(inputArray[mid]>findingOutElement)
-		{
-			System.out.println("GREATER THAN CONDITION  " +findingOutElement+ "  "+startIndex+ "  "+(mid-1));
-			return binarySearchMethod(inputArray,findingOutElement,startIndex,mid-1);
-		}
-		if(inputArray[mid]<findingOutElement)
-		{
-			System.out.println("LESS THAN CONDITION  " +findingOutElement+ "  "+endIndex+ "  "+(mid+1));
-			return binarySearchMethod(inputArray,findingOutElement,mid+1,endIndex);
-		}
+			if(inputArray[mid]==findingOutElement)
+			{
+				return mid;
+			}
+			if(inputArray[mid]>findingOutElement)
+			{
+				System.out.println("GREATER THAN CONDITION  " +findingOutElement+ "  "+startIndex+ "  "+(mid-1));
+				return binarySearchMethod(inputArray,findingOutElement,startIndex,mid-1);
+			}
+			if(inputArray[mid]<findingOutElement)
+			{
+				System.out.println("LESS THAN CONDITION  " +findingOutElement+ "  "+endIndex+ "  "+(mid+1));
+				return binarySearchMethod(inputArray,findingOutElement,mid+1,endIndex);
+			}
 		}
 		return -1;
 	}

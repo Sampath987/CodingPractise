@@ -1,6 +1,7 @@
 package sorting;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class QuickSort {
 
@@ -8,11 +9,22 @@ public class QuickSort {
 		// TODO Auto-generated method stub
 		
 		
+		String str = null;
+		System.out.println(str);
+		Optional<String> optional = Optional.ofNullable(str);
+		
+		System.out.println(optional.isPresent());// + optional.get());
+		
+		
+		
 		int[] arr = 
-			// {3, 5, 4, 2, 1};
 			 { 4,2,44,33,22,100,101,102,103,105,1,5,3,99,23,103,500,200,11,88,77,66,55 };
 		
 		Arrays.stream(arr).forEach(i -> System.out.print(i + " "));
+		System.out.print(  "Yes");
+
+		Arrays.stream(arr).forEach(  System.out::print);
+
 
 		QuickSort quickSort =new QuickSort();
 		quickSort.sortMethod(arr, 0, arr.length-1);

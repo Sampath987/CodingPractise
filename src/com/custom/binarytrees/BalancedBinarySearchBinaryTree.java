@@ -223,16 +223,13 @@ class CustomBalancedBinarySearchBinaryTree
 					firstMethod(st, stackHead.right);
 				
 					return stackHead;
-
-			
-
 				}
 				
 			};
 			
 	}	
 	
-	// may be preOrder-or something else 
+	// may be LevelOrder-or something else 
 	public Iterator<Node> iterate(Node head)
 	{
 		Queue<Node> st = new LinkedList();
@@ -257,8 +254,6 @@ class CustomBalancedBinarySearchBinaryTree
 				st.offer(queueHead.left);
 				st.offer(queueHead.right);
 				return queueHead;
-
-		
 
 			}
 			

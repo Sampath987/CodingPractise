@@ -21,7 +21,7 @@ public class DGCycle {
 		}
 
 		public boolean isCycle() {
-			boolean visited[] = new boolean[vertices];
+			boolean[] visited = new boolean[vertices];
 			boolean recursiveArr[] = new boolean[vertices];
 
 			// do DFS from each node

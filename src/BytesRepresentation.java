@@ -9,7 +9,7 @@ public class BytesRepresentation {
 		
 		for(int i=0; i<128; i++)
 		{
-			System.out.println("The value of "+ i + "is " + (char)i);
+			System.out.println("The value of "+ i + " is " + (char)i + " --");
 		}
 
 	}

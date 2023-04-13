@@ -9,17 +9,20 @@ public class MergeSort {
 
 		// 35421
 		
+		System.out.println(9/2 + "--" + "--" + 9%2);
+		
 		int[] arr = 
-			{ 4,2,44,33,22,100,101,102,103,105,1,5,3,99,23,103,500,200,11,88,77,66,55 };
+		//	{ 4,2,44,33,22,100,101,102,103,105,1,5,3,99,23,103,500,200,11,88,77,66,55 };
 
-			// {3, 5, 4, 2, 1};
-		Arrays.stream(arr).forEach(i -> System.out.println(i));
+			 {3, 5, 4, 2, 1,8,9,6,7,99,109,119,129,139};
+		Arrays.stream(arr).forEach(i -> System.out.print(i + " "));
 
 		System.out.println();
 		MergeSort mergeSort = new MergeSort();
 		mergeSort.mergeSortMethod(arr);
 		
-		Arrays.stream(arr).forEach(i -> System.out.println(i));
+		System.out.println();
+		Arrays.stream(arr).forEach(i -> System.out.print(i + " "));
 	}
 	
 	int start ;
@@ -72,13 +75,18 @@ public class MergeSort {
 			}
 			else if(leftLength< arr.length && left < leftLength)
 			{
-				arr[i] = arrLeft[left];
-				left++;
+				System.arraycopy(arrLeft, left, arr, i, leftLength-left);
+				break;
+			//	arr[i] = arrLeft[left];
+			//	left++;
 			}
 			else if(rightLength < arr.length && right < rightLength)
 			{
-				arr[i] = arrRight[right];
-				right++;
+				System.arraycopy(arrRight, right, arr, i, rightLength-right);
+				break;
+				
+			//	arr[i] = arrRight[right];
+			//	right++;
 			}
 		}
 		return arr;

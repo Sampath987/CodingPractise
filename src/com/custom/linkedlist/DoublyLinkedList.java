@@ -27,17 +27,17 @@ public class DoublyLinkedList {
 	}
 }
 	
-	class Node 
+	class DoublyLinkedListNode 
 	{
 		int value;
-		Node nextNode;
-		Node prevNode;
+		DoublyLinkedListNode nextNode;
+		DoublyLinkedListNode prevNode;
 		
-		Node()
+		DoublyLinkedListNode()
 		{
 			
 		}
-		Node(int value)
+		DoublyLinkedListNode(int value)
 		{
 			this.value=value;
 			this.nextNode=null;
@@ -53,12 +53,12 @@ public class DoublyLinkedList {
 	
 	class CustomDoublyLinkedList
 	{
-		Node head;
-		Node tail;
+		DoublyLinkedListNode head;
+		DoublyLinkedListNode tail;
 		
 		public void getDoublyLinkedListFromTailtoHead()
 		{
-			Node temp = tail;
+			DoublyLinkedListNode temp = tail;
 			while(temp!=null)
 			{
 				System.out.println(temp.toString());
@@ -68,7 +68,7 @@ public class DoublyLinkedList {
 		public void addToDoublyLinkedList(int value)
 		{
 			
-			Node newNode = new Node(value);
+			DoublyLinkedListNode newNode = new DoublyLinkedListNode(value);
 			if(head==null)
 			{
 				newNode.nextNode=null;
@@ -84,9 +84,9 @@ public class DoublyLinkedList {
 			}
 		}
 
-		public Node deleteElementFromDoublyLinkedList(int value)
+		public DoublyLinkedListNode deleteElementFromDoublyLinkedList(int value)
 		{
-			Node temp = tail;
+			DoublyLinkedListNode temp = tail;
 			while(temp!=null && temp.prevNode!=null && temp.prevNode.value!=value)
 			{
 				temp=temp.prevNode;

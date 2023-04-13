@@ -90,7 +90,7 @@ public class HeapSort {
 	public void printSortedArray()
 	{
 		
-		Arrays.stream(heapSort).forEach(i -> System.out.println(i));
+		Arrays.stream(heapSort).forEach(i -> System.out.print(i + "  "));
 		
 	}
 	
@@ -103,7 +103,7 @@ public class HeapSort {
 		currentSize--;
 		private_POLL_DELETE(0);
 		
-		System.out.println(k);
+		System.out.println(" the value of k is :"+k);
 		return k;
 	}
 	

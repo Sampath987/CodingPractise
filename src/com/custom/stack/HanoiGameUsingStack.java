@@ -32,17 +32,6 @@ public class HanoiGameUsingStack {
 		st3.forEach(i -> System.out.println(i));
 
 	}
-	
-	public void recursionForHanoiGame3()
-	{
-		// 3, 'a', 'c', 'b'
-		
-		// Step 1: move n-1 elements to AUX (B)
-		// Step 1: move nth to C
-		// Step 1: move n-2 elements to C using A
-
-		
-	}
 	public void recursionForHanoiGame(int n, Stack st1, Stack st3, Stack st2)
 	{
 		if(n==1)

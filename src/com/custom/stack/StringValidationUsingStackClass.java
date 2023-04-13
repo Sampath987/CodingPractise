@@ -24,6 +24,11 @@ public class StringValidationUsingStackClass {
 		//{}[({})]{{{ -> at the end all open brackets are added & no close brackets are there to validate this
 						// this can be validated by checking stack size
 		// actual string validation
+		
+	    if(s==null)
+            return true;
+	    
+	    
 		Stack<Character> stack = new Stack();
 		char ch;
 		char peek;
